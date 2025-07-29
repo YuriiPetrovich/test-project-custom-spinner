@@ -1,0 +1,106 @@
+html{
+    height:100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+body{
+    height:100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+label{
+    display: block;
+    margin-top: 10%;
+}
+
+input[type="number"]{
+    padding: 0;
+    width: 3rem;
+    height: 1rem;
+    margin-right: 3rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center
+}
+input[type="number"]:focus{
+    outline: none;
+    border: none;
+    border: 1px solid blue;
+}
+
+h1{
+    font-size: 1rem;
+    margin: 0;
+}
+.loader{
+    padding: 5px;
+}
+.no-margin{
+  margin: 0;
+}
+@media screen  and (orientation: portrait){
+  .content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+  }
+}
+
+@media screen  and (orientation: landscape){
+  .content{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+}
+
+.personalize-switch {
+  input {
+    display:none;
+  }
+  span.switch {    
+    display:inline-block;
+    width:3rem;
+    height:1rem;
+    background: white;
+    border:1px solid #ccc;
+    box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2),
+      inset 0px 0px 0px 0px blue;
+    border-radius:20px;
+    margin-right:3rem;
+    position:relative;
+    cursor:pointer;
+    transition: box-shadow .3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    &:after {
+      content:"";
+      width:1.5em;
+      height:1.5em;
+      display:block;
+      position:absolute;
+      top:50%;
+      left:0;
+      background: white;
+      box-shadow:0 0 1px black;
+      border-radius:50%;
+      transform:translate3d(-10%, -50%,0);
+      transition: all .3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    }
+  }
+  input:checked {
+    & + span.switch {
+    box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2),
+      inset 0px 0px 0px 10px blue;
+      &:after {
+        transform:translate3d(90%, -50%,0);        
+      }
+    }
+  }
+}
