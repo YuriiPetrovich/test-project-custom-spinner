@@ -1,5 +1,5 @@
 export const customLoaderTemplate = document.createElement('template');
-
+//edited
 customLoaderTemplate.innerHTML = `
   <style>
   @media screen  and (orientation: portrait){
