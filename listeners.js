@@ -4,6 +4,7 @@ const toggleAnimBtn = document.getElementById('toggleAnimation');
 const toggleHiddenBtn = document.getElementById('toggleVisibility');
 
 value.addEventListener('input',(ev) => {
+    //check input value
     if (ev.target.value < 0) {
         ev.target.value = 0;
     }
