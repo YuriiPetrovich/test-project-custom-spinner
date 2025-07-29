@@ -4,8 +4,16 @@ const toggleAnimBtn = document.getElementById('toggleAnimation');
 const toggleHiddenBtn = document.getElementById('toggleVisibility');
 
 value.addEventListener('input',(ev) => {
+    if (ev.target.value < 0) {
+        ev.target.value = 0;
+    }
+    else if (ev.target.value > 100) {
+        ev.target.value = 100;
+    }
     loader.setAttribute('percent', ev.target.value);
 })
+
+
 
 toggleAnimBtn.addEventListener('change', (e) => {
     console.log(e.target.checked)
