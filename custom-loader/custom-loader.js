@@ -13,9 +13,15 @@ class CustomLoader extends HTMLElement {
     this.bgCircle = this.shadowRoot.querySelectorAll('circle')[0];
     this.fgCircle = this.shadowRoot.querySelectorAll('circle')[1];
     this.svg = this.shadowRoot.querySelector('svg');
-    this.dasharray = parseInt(2* Math.PI * this.bgCircle.r.baseVal.value);
+
+    this.dasharray = 2 * Math.PI * this.bgCircle.r.baseVal.value;
     this.fgCircle.style.strokeDasharray = this.dasharray;
     this.fgCircle.style.strokeDashoffset = this.dasharray;
+
+
+    // this.dasharray = parseInt(2* Math.PI * this.bgCircle.r.baseVal.value);
+    // this.fgCircle.style.strokeDasharray = this.dasharray;
+    // this.fgCircle.style.strokeDashoffset = this.dasharray;
     window.onresize = () => {
       this.update();
     }
@@ -40,12 +46,15 @@ class CustomLoader extends HTMLElement {
       this.style.display = 'inline-block';
     }
     
-    this.dasharray = parseInt(2* Math.PI * this.bgCircle.r.baseVal.value);
-    this.fgCircle.style.strokeDasharray = this.dasharray;
-    this.fgCircle.style.strokeDashoffset = this.dasharray;
+    // this.dasharray = parseInt(2* Math.PI * this.bgCircle.r.baseVal.value);
+    // this.fgCircle.style.strokeDasharray = this.dasharray;
+    // this.fgCircle.style.strokeDashoffset = this.dasharray;
 
-    const dashoffset = parseInt(this.dasharray - (this.dasharray * percent / 100));
+    const dashoffset = this.dasharray - (this.dasharray * percent / 100);
     this.fgCircle.style.strokeDashoffset = dashoffset;
+
+    // const dashoffset = parseInt(this.dasharray - (this.dasharray * percent / 100));
+    // this.fgCircle.style.strokeDashoffset = dashoffset;
 
     if (animated) {
       this.svg.classList.add('animated');

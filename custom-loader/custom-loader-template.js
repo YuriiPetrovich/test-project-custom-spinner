@@ -38,7 +38,7 @@ customLoaderTemplate.innerHTML = `
     }
 }  
   </style>
-<svg viewBox="0 0 100% 100%" transform="rotate(-90 0 0)">
+<svg viewBox="0 0 100 100" style="transform: rotate(-90deg); transform-origin: 50% 50%;">
   <circle
     cx="50%"
     cy="50%"
