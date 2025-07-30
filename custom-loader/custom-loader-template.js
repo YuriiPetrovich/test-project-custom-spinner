@@ -42,19 +42,19 @@ customLoaderTemplate.innerHTML = `
   <circle
     cx="50%"
     cy="50%"
-    r="45%"
+    r="35%"
     fill="none"
     stroke="#eee"
-    stroke-width="8"
+    stroke-width="6"
   ></circle>
   <circle
     cx="50%"
     cy="50%"
-    r="45%"
+    r="35%"
     fill="none"
-    stroke="#3f51b5"
-    stroke-width="8"
-    stroke-linecap="round"
+    stroke="rgb(0,92,255)"
+    stroke-width="6"
+    stroke-linecap="square"
   ></circle>
 </svg>
 `;

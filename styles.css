@@ -1,7 +1,7 @@
 html{
     height:100vh;
     width: 100vw;
-    padding: 3% 3%;
+    padding: 16px 16px;
     box-sizing: border-box;
 }
 
@@ -15,16 +15,18 @@ body{
     flex-direction: column;
 }
 label{
-    display: block;
+    display: flex;
+    align-items: center;
     margin-top: 10%;
 }
 
 input[type="number"]{
     padding: 0;
-    width: 3rem;
-    height: 1rem;
-    margin-right: 3rem;
-    border-radius: 10px;
+    width: 2.5rem;
+    font-size: 1rem;
+    height: 1.75rem;
+    margin-right: 1rem;
+    border-radius: 50px;
     border: 1px solid black;
     text-align: center
 }
@@ -52,6 +54,9 @@ h1{
     justify-content: space-evenly;
     flex-grow: 1;
   }
+  .settings{
+    margin-bottom: 15%;
+  }
 }
 
 @media screen  and (orientation: landscape){
@@ -62,6 +67,9 @@ h1{
     justify-content: space-around;
     flex-direction: row;
   }
+  .settings{
+    margin-right: 15%;
+  }
 }
 
 .personalize-switch {
@@ -70,38 +78,33 @@ h1{
   }
   span.switch {    
     display:inline-block;
-    width:3rem;
-    height:1rem;
-    background: white;
-    border:1px solid #ccc;
-    box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2),
-      inset 0px 0px 0px 0px blue;
+    width:2.5rem;
+    height:1.75rem;
+    background: rgb(218,230,236);
+
     border-radius:20px;
-    margin-right:3rem;
+    margin-right:1rem;
     position:relative;
     cursor:pointer;
-    transition: box-shadow .3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
     &:after {
       content:"";
-      width:1.5em;
-      height:1.5em;
+      width:1.5rem;
+      height:1.5rem;
       display:block;
       position:absolute;
       top:50%;
       left:0;
       background: white;
-      box-shadow:0 0 1px black;
       border-radius:50%;
-      transform:translate3d(-10%, -50%,0);
+      transform:translate3d(7%, -50%,0);
       transition: all .3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
     }
   }
   input:checked {
     & + span.switch {
-    box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2),
-      inset 0px 0px 0px 10px blue;
+      background: rgb(0,92,255);
       &:after {
-        transform:translate3d(110%, -50%,0);        
+        transform:translate3d(60%, -50%,0);        
       }
     }
   }
